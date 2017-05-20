@@ -1,0 +1,30 @@
+:host {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    .input-search-container {
+        position: relative;
+        color: #aaa;
+        font-size: 16px;
+        display: inline-block;
+        max-width: 100%;
+    }
+    .input-search-container input {
+        width: 250px;
+        max-width: 100%;
+        height: 32px;
+        background: #fcfcfc;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        box-shadow: 0 0 3px #ccc, 0 10px 15px #ebebeb inset;
+    }
+    .input-search-container input {
+        text-indent: 32px;
+    }
+    .input-search-container i {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "admins": [{
+        "name": "Marc",
+        "lastname": "Torruella",
+        "email": "info@marctorruella.com",
+        "picture": "images/profiles/bale.jpg",
+        "password": "password"
+    }]
+}

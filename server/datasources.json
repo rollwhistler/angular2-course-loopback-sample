@@ -1,0 +1,10 @@
+{
+    "db": {
+        "name": "db",
+        "connector": "mysql",
+        "user": "root",
+        "password": "",
+        "database": "angularcourse",
+        "host": "localhost"
+    }
+}

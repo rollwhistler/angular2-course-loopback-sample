@@ -1,0 +1,9 @@
+{
+    "admins": [{
+        "name": "Marc",
+        "lastname": "Torruella",
+        "email": "rollwhistler@gmail.com",
+        "picture": "images/profiles/obama.jpg",
+        "password": "password"
+    }]
+}
