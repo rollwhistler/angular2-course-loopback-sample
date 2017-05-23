@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
     this.allUsers = this.userService.getUsers();
     this.thingyService.getThingys().subscribe((thingies: Thing[]) => {
 
-      this.allThings = thingies;
+      this.things = thingies;
     });
     this.searchTxtUser = '';
     this.searchTxtThing = '';
