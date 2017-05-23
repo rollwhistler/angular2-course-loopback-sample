@@ -1,39 +1,12 @@
 import { Injectable } from '@angular/core';
+import { ThingApi } from '../../shared/sdk/services/index';
 
 @Injectable()
 export class ThingyService {
 
-  constructor() { }
+  constructor(private thingApi: ThingApi) { }
 
   getThingys() {
-    return [{
-      name: 'Car',
-      id: 1,
-      active: true
-    }, {
-      name: 'Moto',
-      id: 2,
-      active: true
-    },{
-      name: 'Plane',
-      id: 3,
-      active: true
-    },{
-      name: 'Train',
-      id: 4,
-      active: true
-    },{
-      name: 'Lamp',
-      id: 5,
-      active: true
-    },{
-      name: 'Chair',
-      id: 6,
-      active: true
-    },{
-      name: 'Ring',
-      id: 7,
-      active: true
-    }]
+    return this.thingApi.find();
   }
 }

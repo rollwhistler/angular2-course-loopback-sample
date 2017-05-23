@@ -3,6 +3,8 @@ import { User } from './modules/user/models/user';
 import { Thingy } from './modules/object/models/thingy';
 import { UserService } from './modules/user/services/user.service';
 import { ThingyService } from './modules/object/services/thingy.service';
+import { Thing } from './modules/shared/sdk/models/index';
+import { LoopBackConfig } from './modules/shared/sdk/index';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +25,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.allUsers = this.userService.getUsers();
-    this.allThings = this.thingyService.getThingys();
+    this.thingyService.getThingys().subscribe((thingies: Thing[]) => {
+
+      this.allThings = thingies;
+    });
     this.searchTxtUser = '';
     this.searchTxtThing = '';
     this.filterUsers();
