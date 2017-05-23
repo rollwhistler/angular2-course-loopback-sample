@@ -20,7 +20,8 @@ export class AppComponent implements OnInit {
   searchTxtThing: string;
 
   constructor(private userService: UserService, private thingyService: ThingyService) {
-
+    LoopBackConfig.setBaseURL("http://localhost:3000");
+    LoopBackConfig.setApiVersion("api");
   }
 
   ngOnInit() {
