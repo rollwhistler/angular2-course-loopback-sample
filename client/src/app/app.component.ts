@@ -44,6 +44,10 @@ export class AppComponent implements OnInit {
     });
   }
 
+  changeName(res: any) {
+    this.thingyService.updateName(res.newName, res.item);
+  }
+
   userTxtSearch(search: string) {
     this.searchTxtUser = search;
     this.filterUsers();

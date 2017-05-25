@@ -9,10 +9,10 @@
         </div>
         <md-grid-list cols="2" rowHeight="1:1">
             <md-grid-tile>
-                <app-generic-list [items]="users"></app-generic-list>
+                <app-generic-list [items]="users" (onNameChanged)="changeName($event)"></app-generic-list>
             </md-grid-tile>
             <md-grid-tile>
-                <app-generic-list [items]="things"></app-generic-list>
+                <app-generic-list [items]="things" (onNameChanged)="changeName($event)"></app-generic-list>
             </md-grid-tile>
         </md-grid-list>
     </div>

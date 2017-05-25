@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { GenericItem } from './generic-list.interfaces';
 
 @Component({
@@ -9,10 +9,17 @@ import { GenericItem } from './generic-list.interfaces';
 export class GenericListComponent implements OnInit {
 
   @Input() items: GenericItem[];
-
+  @Output() onNameChanged: EventEmitter<{newName: string, item: GenericItem}> = new EventEmitter<{newName: string, item: GenericItem}>();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  nameChanged(newName: string, item: GenericItem) {
+    this.onNameChanged.emit({
+      newName,
+      item
+    });
   }
 
 }
