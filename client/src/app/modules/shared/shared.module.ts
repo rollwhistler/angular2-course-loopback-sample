@@ -12,6 +12,7 @@ import { InputSearchComponent } from './form/input-search/input-search.component
 import { GenericFilterComponent } from './form/generic-filter/generic-filter.component';
 import { GenericListComponent } from './generic-list/generic-list.component';
 import { ColorChangeOnClickDirective } from './directives/color-change-on-click.directive';
+import { LastUpercasePipe } from './pipes/last-upercase.pipe';
 
 @NgModule({
   imports: [
@@ -26,8 +27,9 @@ import { ColorChangeOnClickDirective } from './directives/color-change-on-click.
     InputSearchComponent,
     GenericFilterComponent,
     GenericListComponent,
-    ColorChangeOnClickDirective
+    ColorChangeOnClickDirective,
+    LastUpercasePipe
   ],
-  exports: [InputSearchComponent, ColorChangeOnClickDirective, GenericFilterComponent, GenericListComponent, BrowserAnimationsModule, SDKBrowserModule]
+  exports: [InputSearchComponent, LastUpercasePipe, ColorChangeOnClickDirective, GenericFilterComponent, GenericListComponent, BrowserAnimationsModule, SDKBrowserModule]
 })
 export class SharedModule { }
