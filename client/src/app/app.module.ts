@@ -13,11 +13,13 @@ import { SharedModule } from './modules/shared/shared.module';
 
 // my components
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

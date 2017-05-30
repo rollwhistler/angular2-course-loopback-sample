@@ -1,0 +1,15 @@
+<md-sidenav-container>
+    <md-sidenav #sidenav mode="side">
+        <app-generic-filter title="Objects Filter" [items]="things" (onItemUpdate)="objCategoryChanged($event)" (onSearchUpdate)="objTxtSearch($event)"></app-generic-filter>
+    </md-sidenav>
+    <div class="my-content">
+        <div class="filterBtnContainer">
+            <button md-raised-button (click)="sidenav.toggle()" class="filterBtn">Open Filter</button>
+        </div>
+        <md-grid-list cols="2" rowHeight="1:1">
+            <md-grid-tile>
+                <app-generic-list [items]="things" (onNameChanged)="changeName($event)"></app-generic-list>
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
+</md-sidenav-container>
