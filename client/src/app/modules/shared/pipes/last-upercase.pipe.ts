@@ -5,9 +5,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class LastUpercasePipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
+  transform(value: any, position?: number): any {
     let arr = value.split("");
-    arr[arr.length - 1] = arr[arr.length -1].toUpperCase();
+    if (!position || isNaN(position) || (position < 0) ) position = arr.length -1;
+    else if (position > (arr.length - 1)) position = arr.length -1;
+
+    arr[position] = arr[position].toUpperCase();
     return arr.join("");
   }
 
