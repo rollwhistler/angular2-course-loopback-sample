@@ -1,10 +1,1 @@
-<form [formGroup]="loginForm" (ngSubmit)="submit()">
-    <md-input-container>
-        <input mdInput placeholder="Username" name="username" [formControl]="username" />
-    </md-input-container>
-    <md-input-container>
-        <input mdInput placeholder="Password" type="password" name="password" [formControl]="password" /> {{password.hasError("testValidator")}}
-    </md-input-container>
-    <button md-raised-button type="submit">Submit</button>
-
-</form>
+<router-outlet></router-outlet>

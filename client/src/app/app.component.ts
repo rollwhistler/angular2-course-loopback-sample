@@ -9,25 +9,6 @@ import { testValidator } from './modules/shared/validators/validators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent{
-  username: FormControl = new FormControl('',[
-    Validators.required
-  ]);
-  password: FormControl = new FormControl('',[
-    Validators.required,
-    testValidator
-  ]);
-  loginForm: FormGroup = this.builder.group({
-    username: this.username, 
-    password: this.password
-  });
   
-  constructor(private  builder: FormBuilder) {
-
-  }
-  
-  submit() {
-    console.log(this.loginForm);
-  }  
-
 }
 
