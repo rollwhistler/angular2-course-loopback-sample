@@ -12,17 +12,18 @@ import { SharedModule } from './modules/shared/shared.module';
 import { RoutingModule } from './modules/routing/routing.module';
 // my components
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+
 // my services
 import { LoginGuardService } from './modules/user/services/auth/login-guard.service';
+import { SDKBrowserModule } from './modules/shared/sdk/index';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
+    SDKBrowserModule.forRoot(),
     HttpModule,
     UserModule,
     ObjectModule,

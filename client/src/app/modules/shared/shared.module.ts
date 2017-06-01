@@ -25,7 +25,7 @@ import { LastUpercasePipe } from './pipes/last-upercase.pipe';
     BrowserAnimationsModule,
     MdCheckboxModule,
     MdListModule,
-    SDKBrowserModule.forRoot(),
+    SDKBrowserModule,
     MdInputModule,
     MdButtonModule
   ],
