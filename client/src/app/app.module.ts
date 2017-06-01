@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 // third party
@@ -23,11 +23,11 @@ import { HomeComponent } from './components/home/home.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
     UserModule,
     ObjectModule,
     SharedModule,
+    ReactiveFormsModule,
     MdSidenavModule, MdGridListModule, MdButtonModule
   ],
   providers: [],

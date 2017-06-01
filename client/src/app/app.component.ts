@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoopBackConfig } from './modules/shared/sdk/index';
-import { NgForm } from '@angular/forms';
+import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { testValidator } from './modules/shared/validators/validators';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,24 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent{
-  submit(form: NgForm) {
-    console.log(form);
+  username: FormControl = new FormControl('',[
+    Validators.required
+  ]);
+  password: FormControl = new FormControl('',[
+    Validators.required,
+    testValidator
+  ]);
+  loginForm: FormGroup = this.builder.group({
+    username: this.username, 
+    password: this.password
+  });
+  
+  constructor(private  builder: FormBuilder) {
+
+  }
+  
+  submit() {
+    console.log(this.loginForm);
   }  
 
 }

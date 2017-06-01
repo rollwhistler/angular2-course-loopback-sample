@@ -16,6 +16,8 @@ import { GenericListComponent } from './generic-list/generic-list.component';
 import { ColorChangeOnClickDirective } from './directives/color-change-on-click.directive';
 import { LastUpercasePipe } from './pipes/last-upercase.pipe';
 
+
+
 @NgModule({
   imports: [
     CommonModule,
