@@ -5,6 +5,8 @@ import { UserService } from '../../modules/user/services/user.service';
 import { ThingyService } from '../../modules/object/services/thingy.service';
 import { Thing } from '../../modules/shared/sdk/models/index';
 import { LoopBackConfig } from '../../modules/shared/sdk/index';
+import { UserApi } from '../../modules/shared/sdk/services/index';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-component',
@@ -19,7 +21,7 @@ export class HomeComponent implements OnInit {
   searchTxtUser: string;
   searchTxtThing: string;
 
-  constructor(private userService: UserService, private thingyService: ThingyService) {
+  constructor(private userService: UserService, private thingyService: ThingyService, private userApi: UserApi, private router: Router) {
     LoopBackConfig.setBaseURL("http://localhost:3000");
     LoopBackConfig.setApiVersion("api");
   }
@@ -57,6 +59,11 @@ export class HomeComponent implements OnInit {
     this.thingyService.getThingys(search).subscribe((things: Thing[]) => {
       this.things = things;
     });
+  }
+
+  logout() {
+    this.userApi.logout();
+    this.router.navigate(['/login']);
   }
 
 }

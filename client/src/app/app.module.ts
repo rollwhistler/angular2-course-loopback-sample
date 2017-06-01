@@ -13,7 +13,8 @@ import { RoutingModule } from './modules/routing/routing.module';
 // my components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-
+// my services
+import { LoginGuardService } from './modules/user/services/auth/login-guard.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { HomeComponent } from './components/home/home.component';
     MdSidenavModule, MdGridListModule, MdButtonModule,
     RoutingModule
   ],
-  providers: [],
+  providers: [LoginGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
