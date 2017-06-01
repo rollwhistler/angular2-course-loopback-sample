@@ -5,5 +5,11 @@
         "email": "rollwhistler@gmail.com",
         "picture": "images/profiles/obama.jpg",
         "password": "password"
+    }, {
+        "name": "Marc",
+        "lastname": "Torruella",
+        "email": "test@test.com",
+        "picture": "images/profiles/obama.jpg",
+        "password": "test"
     }]
 }

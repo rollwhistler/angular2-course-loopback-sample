@@ -3,6 +3,7 @@ import { LoopBackConfig } from '../../shared/sdk/index';
 import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { User, AccessToken }  from '../../shared/sdk/models/index';
 import { UserApi }            from '../../shared/sdk/services/index';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,7 @@ export class LoginComponent  {
     password: this.password
   });
   
-  constructor(private  builder: FormBuilder, private userApi: UserApi) {
+  constructor(private  builder: FormBuilder, private userApi: UserApi, private router: Router) {
     LoopBackConfig.setBaseURL("http://localhost:3000");
     LoopBackConfig.setApiVersion("api");
   }
@@ -30,7 +31,7 @@ export class LoginComponent  {
   submit() {
     this.userApi.login({'email':this.username.value, 'password':this.password.value}, true)
     .subscribe((user) => {
-      console.log(user);
+      this.router.navigate(['/']);
     }, (err) => alert(err.message));
   }  
 
