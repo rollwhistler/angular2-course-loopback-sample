@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import {MdCheckboxModule} from '@angular/material';
 import {MdListModule} from '@angular/material';
 import {MdInputModule} from '@angular/material';
@@ -21,8 +20,8 @@ import { LastUpercasePipe } from './pipes/last-upercase.pipe';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     BrowserAnimationsModule,
+    FormsModule,
     MdCheckboxModule,
     MdListModule,
     SDKBrowserModule,
@@ -37,7 +36,7 @@ import { LastUpercasePipe } from './pipes/last-upercase.pipe';
     LastUpercasePipe
   ],
   exports: [InputSearchComponent, LastUpercasePipe,  MdInputModule,
-    MdButtonModule, ColorChangeOnClickDirective, GenericFilterComponent, 
-    GenericListComponent, BrowserAnimationsModule, SDKBrowserModule]
+    MdButtonModule, ColorChangeOnClickDirective, GenericFilterComponent,
+    GenericListComponent, SDKBrowserModule, BrowserAnimationsModule]
 })
 export class SharedModule { }
