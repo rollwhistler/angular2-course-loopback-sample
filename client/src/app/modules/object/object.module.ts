@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SharedModule } from '../shared/shared.module';
-import { HomeComponent } from './components/home/home.component';
+
 import {ThingyService} from './services/thingy.service';
 import { RoutingModule } from './routing.module';
 
@@ -13,7 +13,7 @@ import { RoutingModule } from './routing.module';
     RoutingModule
   ],
   providers: [ThingyService],
-  declarations: [HomeComponent],
+  declarations: [],
   exports: []
 })
 export class ObjectModule { }

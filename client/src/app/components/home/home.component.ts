@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../../user/models/user';
-import { Thingy } from '../../../object/models/thingy';
-import { UserService } from '../../../user/services/user.service';
-import { ThingyService } from '../../../object/services/thingy.service';
-import { Thing } from '../../../shared/sdk/models/index';
-import { LoopBackConfig } from '../../../shared/sdk/index';
-import { UserApi } from '../../../shared/sdk/services/index';
+import { User } from '../../modules/user/models/user';
+import { Thingy } from '../../modules/object/models/thingy';
+import { UserService } from '../../modules/user/services/user.service';
+import { ThingyService } from '../../modules/object/services/thingy.service';
+import { Thing } from '../../modules/shared/sdk/models/index';
+import { LoopBackConfig } from '../../modules/shared/sdk/index';
+import { UserApi } from '../../modules/shared/sdk/services/index';
 import { Router } from '@angular/router';
 
 @Component({
