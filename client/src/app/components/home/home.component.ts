@@ -11,6 +11,7 @@ import { INCREMENT, DECREMENT, RESET } from '../../modules/shared/reducers/count
 import { AppState } from '../../modules/shared/reducers/appState';
 import {Observable} from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
+import { SEARCH_SET } from '../../modules/shared/reducers/search';
 
 @Component({
   selector: 'app-home-component',
@@ -25,11 +26,17 @@ export class HomeComponent implements OnInit {
   searchTxtUser: string;
   searchTxtThing: string;
   counter: Observable<number>;
+  searchTxtStore: Observable<string>;
 
   constructor(private store: Store<AppState>, private userService: UserService, private thingyService: ThingyService, private userApi: UserApi, private router: Router) {
     LoopBackConfig.setBaseURL("http://localhost:3000");
     LoopBackConfig.setApiVersion("api");
     this.counter = store.select('counter');
+    this.searchTxtStore = store.select('searchTxt');
+    this.searchTxtThing = '';
+    this.searchTxtStore.subscribe((txt)=>{
+      this.searchTxtThing = txt;
+    });
   }
 
   ngOnInit() {
@@ -37,8 +44,7 @@ export class HomeComponent implements OnInit {
     this.thingyService.getThingys().subscribe((thingies: Thing[]) => {
       this.things = thingies;
     });
-    this.searchTxtUser = '';
-    this.searchTxtThing = '';
+    if(!this.searchTxtThing) this.searchTxtThing = ""; 
     this.filterUsers();
   }
 
@@ -71,6 +77,7 @@ export class HomeComponent implements OnInit {
   }
 
   objTxtSearch(search: string) {
+    this.store.dispatch({ type: SEARCH_SET, payload:search });
     this.thingyService.getThingys(search).subscribe((things: Thing[]) => {
       this.things = things;
     });

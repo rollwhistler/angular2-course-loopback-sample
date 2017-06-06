@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './modules/shared/reducers/counter';
+import { searchTxtReducer } from './modules/shared/reducers/search';
 import { routerReducer, RouterStoreModule } from '@ngrx/router-store';
 
 // third party
@@ -33,7 +34,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     SharedModule,
     MdSidenavModule, MdGridListModule, MdButtonModule,
     RoutingModule,
-    StoreModule.provideStore({ counter: counterReducer, router: routerReducer }),
+    StoreModule.provideStore({ counter: counterReducer, searchTxt: searchTxtReducer, router: routerReducer }),
     StoreDevtoolsModule.instrumentOnlyWithExtension({
       maxAge: 5
     }),
