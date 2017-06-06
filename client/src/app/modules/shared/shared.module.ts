@@ -15,6 +15,7 @@ import { GenericFilterComponent } from './form/generic-filter/generic-filter.com
 import { GenericListComponent } from './generic-list/generic-list.component';
 import { ColorChangeOnClickDirective } from './directives/color-change-on-click.directive';
 import { LastUpercasePipe } from './pipes/last-upercase.pipe';
+import { CounterComponent } from './components/counter/counter.component';
 
 
 
@@ -34,10 +35,11 @@ import { LastUpercasePipe } from './pipes/last-upercase.pipe';
     GenericFilterComponent,
     GenericListComponent,
     ColorChangeOnClickDirective,
-    LastUpercasePipe
+    LastUpercasePipe,
+    CounterComponent
   ],
   exports: [InputSearchComponent, LastUpercasePipe,  MdInputModule,
     MdButtonModule, ColorChangeOnClickDirective, GenericFilterComponent, 
-    GenericListComponent, BrowserAnimationsModule, SDKBrowserModule]
+    GenericListComponent, BrowserAnimationsModule, SDKBrowserModule, CounterComponent]
 })
 export class SharedModule { }

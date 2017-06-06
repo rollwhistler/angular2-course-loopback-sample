@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './modules/shared/reducers/counter';
+import { routerReducer, RouterStoreModule } from '@ngrx/router-store';
 
 // third party
 import {MdSidenavModule, MdGridListModule, MdButtonModule} from '@angular/material';
@@ -15,6 +18,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 // my services
 import { LoginGuardService } from './modules/user/services/auth/login-guard.service';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,12 @@ import { LoginGuardService } from './modules/user/services/auth/login-guard.serv
     ObjectModule,
     SharedModule,
     MdSidenavModule, MdGridListModule, MdButtonModule,
-    RoutingModule
+    RoutingModule,
+    StoreModule.provideStore({ counter: counterReducer, router: routerReducer }),
+    StoreDevtoolsModule.instrumentOnlyWithExtension({
+      maxAge: 5
+    }),
+    RouterStoreModule.connectRouter()
   ],
   providers: [LoginGuardService],
   bootstrap: [AppComponent]

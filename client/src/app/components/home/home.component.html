@@ -1,6 +1,7 @@
 <md-sidenav-container>
     <md-sidenav #sidenav mode="side">
         <app-generic-filter title="Objects Filter" [items]="things" (onItemUpdate)="objCategoryChanged($event)" (onSearchUpdate)="objTxtSearch($event)"></app-generic-filter>
+        <app-counter [counter]="counter" (increment)="increment()" (decrement)="decrement()"></app-counter>
     </md-sidenav>
     <div class="my-content">
         <i class="material-icons" (click)="logout()">exit_to_app</i>

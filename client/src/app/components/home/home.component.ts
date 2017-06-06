@@ -7,6 +7,10 @@ import { Thing } from '../../modules/shared/sdk/models/index';
 import { LoopBackConfig } from '../../modules/shared/sdk/index';
 import { UserApi } from '../../modules/shared/sdk/services/index';
 import { Router } from '@angular/router';
+import { INCREMENT, DECREMENT, RESET } from '../../modules/shared/reducers/counter';
+import { AppState } from '../../modules/shared/reducers/appState';
+import {Observable} from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-home-component',
@@ -20,10 +24,12 @@ export class HomeComponent implements OnInit {
   allThings: Thingy[];
   searchTxtUser: string;
   searchTxtThing: string;
+  counter: Observable<number>;
 
-  constructor(private userService: UserService, private thingyService: ThingyService, private userApi: UserApi, private router: Router) {
+  constructor(private store: Store<AppState>, private userService: UserService, private thingyService: ThingyService, private userApi: UserApi, private router: Router) {
     LoopBackConfig.setBaseURL("http://localhost:3000");
     LoopBackConfig.setApiVersion("api");
+    this.counter = store.select('counter');
   }
 
   ngOnInit() {
@@ -35,6 +41,15 @@ export class HomeComponent implements OnInit {
     this.searchTxtThing = '';
     this.filterUsers();
   }
+
+  increment(){
+		this.store.dispatch({ type: INCREMENT });
+	}
+
+	decrement(){
+		this.store.dispatch({ type: DECREMENT });
+	}
+
 
   filterUsers() {
     this.users = this.allUsers.filter((user)=> {
