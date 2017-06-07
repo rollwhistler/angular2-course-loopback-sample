@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { LastUpercasePipe } from '../pipes/last-upercase.pipe';
 import { GenericListComponent } from './generic-list.component';
+import { ColorChangeOnClickDirective } from '../directives/color-change-on-click.directive';
+import { SharedTestModule } from '../shared-test.module';
 
 describe('GenericListComponent', () => {
   let component: GenericListComponent;
@@ -8,7 +10,8 @@ describe('GenericListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GenericListComponent ]
+      imports: [SharedTestModule],
+      declarations: [ GenericListComponent, LastUpercasePipe,  ColorChangeOnClickDirective]
     })
     .compileComponents();
   }));
