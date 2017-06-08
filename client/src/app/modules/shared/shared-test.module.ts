@@ -7,7 +7,6 @@ import {MdCheckboxModule} from '@angular/material';
 import {MdListModule} from '@angular/material';
 import {MdInputModule} from '@angular/material';
 import {MdButtonModule} from '@angular/material';
-import { SDKBrowserModule } from './sdk/index';
 
 @NgModule({
   imports: [
@@ -17,7 +16,6 @@ import { SDKBrowserModule } from './sdk/index';
     BrowserAnimationsModule,
     MdCheckboxModule,
     MdListModule,
-    SDKBrowserModule,
     MdInputModule,
     MdButtonModule,
     RouterTestingModule
@@ -27,7 +25,6 @@ import { SDKBrowserModule } from './sdk/index';
     BrowserAnimationsModule,
     MdCheckboxModule,
     MdListModule,
-    SDKBrowserModule,
     MdInputModule,
     MdButtonModule,
     RouterTestingModule]

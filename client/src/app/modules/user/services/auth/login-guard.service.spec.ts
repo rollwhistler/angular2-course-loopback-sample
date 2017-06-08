@@ -1,11 +1,16 @@
 import { TestBed, inject } from '@angular/core/testing';
-
+import { SharedTestModule } from '../../../shared/shared-test.module';
+import { UserApi } from '../../../shared/sdk/services/index';
 import { LoginGuardService } from './login-guard.service';
 
 describe('LoginGuardService', () => {
   beforeEach(() => {
+    let userApiStub = {
+      isAuthenticated: ()=>{}
+    };
     TestBed.configureTestingModule({
-      providers: [LoginGuardService]
+     imports: [SharedTestModule],
+     providers: [LoginGuardService, {provide: UserApi, useValue:userApiStub}]
     });
   });
 
